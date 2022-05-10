@@ -3,10 +3,10 @@ FROM php:5.6-fpm
 RUN apt-get update && \
   apt-get -y install unzip libzip-dev libicu-dev libonig-dev
 
-# ImageMagickの依存パッケージ
+# ImageMagickの依存パッケージインストール
 RUN apt-get -y install gcc pkg-config libmagickwand-dev
 
-# ImageMagickの依存パッケージ
+# ImageMagickのインストール
 RUN pecl install imagick-3.4.4
 
 RUN docker-php-ext-install intl pdo
