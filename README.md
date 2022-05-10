@@ -1,7 +1,6 @@
 # 試験環境
   - php 5.6.40
   - imagick 3.4.4
-  - CodeIgniter 2.2.0 
   - Apache 2.4.53
 
 # 画像＋文字合成試験
