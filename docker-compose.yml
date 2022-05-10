@@ -1,0 +1,21 @@
+# Docker Composeファイルのバージョンを指定
+version: "3.9"
+
+services:
+
+  php:
+    build: ./setting/php
+    volumes:
+      - ./www:/work
+      - ./setting/php/php.ini:/usr/local/etc/php/php.ini
+
+  httpd:
+    image: httpd:2.4.53
+    ports:
+      - 8081:80
+    volumes:
+      - ./www:/work
+      - ./setting/httpd/httpd.conf:/usr/local/apache2/conf/httpd.conf
+    working_dir: /work
+    depends_on:
+      - php
