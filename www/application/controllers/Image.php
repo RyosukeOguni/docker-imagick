@@ -22,7 +22,7 @@ class Image extends MY_Controller
         // 文字列を書き込んでくれるクラス
         $draw = new ImagickDraw();
         // フォントファイルのpath
-        $fontPath = dirname(BASEPATH) . "/common/font/meiryo.ttc";
+        $fontPath = dirname(BASEPATH) . '/common/font/meiryo.ttc';
         // フォントの指定
         $draw->setFont($fontPath);
         // フォントサイズの指定
@@ -38,11 +38,12 @@ class Image extends MY_Controller
         // 画像へ文字列を合成！
         $templateImg->drawImage($draw);
         // ファイルとして出力
-        $templateImg->writeImage(dirname(BASEPATH) . '/output/' . "result.png");
+        $templateImg->writeImage(dirname(BASEPATH) . '/output/' . 'result.png');
 
-        // 画像を表示
-        header('Content-Type: image/png');
-        echo $templateImg;
+        // 画像をDL
+        $dl = file_get_contents(dirname(BASEPATH) . '/output/' . 'result.png');
+        force_download("result.png", $dl);
+
 
         // お掃除
         $templateImg->destroy();
@@ -69,6 +70,10 @@ class Image extends MY_Controller
         $img->writeImage(dirname(BASEPATH) . '/output/' . $fileName['filename'] . '.png'); //pngファイルを書き出す
         $img->clear(); //画像データを破棄
         $img->destroy(); //画像データを破棄
+
+        // 画像をDL
+        $dl = file_get_contents(dirname(BASEPATH) . '/output/' . $fileName['filename'] . '.png');
+        force_download($fileName['filename'] . '.png', $dl);
 
         $this->index();
     }
