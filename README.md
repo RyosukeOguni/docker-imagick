@@ -8,7 +8,7 @@
     ```
     docker-compose up -d
     ```
-2. [http://localhost:8081/](http://localhost:8081/)  
+2. [http://localhost/](http://localhost/)  
    - テストページを開くと同時にtest.pngの任意の位置に"ML-NET番号"を合成したresult.pngファイルを生成
    - 合成後イメージをページに表示
 
