@@ -1,4 +1,4 @@
-<?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed');
+<?php if (!defined('BASEPATH')) exit('No direct script access allowed');
 /*
 | -------------------------------------------------------------------------
 | URI ROUTING
@@ -38,10 +38,11 @@
 |
 */
 
-$route['default_controller'] = 'index';
+$route['default_controller'] = 'image';
 $route['404_override'] = '';
 
-$route['do_upload'] = 'do_upload';
+$route['do_upload'] = 'image/do_upload';
+$route['do_convert'] = 'image/do_convert';
 
 /* End of file routes.php */
 /* Location: ./application/config/routes.php */

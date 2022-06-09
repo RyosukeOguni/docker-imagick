@@ -1,4 +1,5 @@
 .vscode
-www/result.png
+www/output/*
+!www/output/.gitkeep
 www/application/views/templates_c/*
 !www/application/views/templates_c/.gitkeep
